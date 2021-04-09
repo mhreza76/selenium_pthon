@@ -24,8 +24,20 @@ else:
 driver.implicitly_wait(10)
 driver.get("https://www.orangehrm.com/orangehrm-30-day-trial/")
 print(driver.title)
-driver.find_element(By.ID, 'Form_submitForm_subdomain').send_keys("reza768")
-# driver.find_element(By.ID, '.private-form__input-wrapper #password').send_keys("reza768")
-# driver.find_element(By.ID, 'loginBtn').click()
+username_url = driver.find_element(By.ID, 'Form_submitForm_subdomain')
+first_name = driver.find_element(By.ID, 'Form_submitForm_FirstName')
+last_name = driver.find_element(By.ID, 'Form_submitForm_LastName')
+email = driver.find_element(By.ID, 'Form_submitForm_Email')
+job_title = driver.find_element(By.ID, 'Form_submitForm_JobTitle')
+about_link = driver.find_element(By.LINK_TEXT, 'About OrangeHRM')
+
+username_url.send_keys("mhreza.com")
+first_name.send_keys("Mahmudul Hasan")
+last_name.send_keys("Reza")
+email.send_keys("rezabaiust@gmail.com")
+job_title.send_keys("Bekar")
+about_link.click()
+
+
 time.sleep(3)
 driver.quit()
